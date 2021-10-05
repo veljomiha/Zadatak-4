@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="main.css">
+  <!-- <meta name="color-scheme" content="dark light"> -->
+  <title></title>
+</head>
+
+<body>
+  <section>
+    <div class="main">
+      <div class="main__mode">
+        <div>
+          <h2>devfinder</h2>
+        </div>
+        <div type="submit" class="mode" onclick="mode();changeMode();">
+          <p id="dark-light">DARK</p><img id="moon-sun" src="assets/icon-moon.svg" alt="moon-sun">
+        </div>
+      </div>
+
+      <div class="main__search">
+        <input type="text" name="username" id="username"  placeholder="Search GitHub username..." onkeypress="return searchKeyPress(event);">
+        <p id="warr">No results</p>
+        <button id="search" onclick="main();">Search</button>
+      </div>
+
+      <div class="main__profile">
+
+        <div class="main__profile--info">
+          <div class="info-1">
+            <img src="" alt="Profile photo" id="avatar-data">
+            <div>
+              <div class="name-and-et-and-joined">
+                <div class="name-and-et">
+                  <p id="name-data">No name</p>
+                  <p class="et-username">@<span id="username-data"></span></p>
+                </div>
+                <div class="joined">
+                  <p>Joined <span id="joined-data"></span></p>
+                </div>
+              </div>
+              <div class="biography">
+                <p id="bio-data">---</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-2">
+            <div>
+              <p>Repos</p>
+              <p id="repos-data">--</p>
+            </div>
+            <div>
+              <p>Followers</p>
+              <p id="followers-data">--</p>
+            </div>
+            <div>
+              <p>Following</p>
+              <p id="following-data">--</p>
+            </div>
+          </div>
+          <div>
+            <div class="info-3">
+              <p id="location-data-all"><img src="assets/icon-location.svg" alt=""><span id="location-data">Not Available</span></p>
+              <p id="twitter-data-all"><img src="assets/icon-twitter.svg" alt=""><span id="twitter-data">Not Available</span></p>
+            </div>
+            <div class="info-3">
+              <p id="blog-data-all"><img src="assets/icon-website.svg" alt=""><a><span id="blog-data">Not Available</span></a></p>
+              <p id="company-data-all"><img src="assets/icon-company.svg" alt=""><span id="company-data">Not Available</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>
