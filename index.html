@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="main.css">
   <!-- <meta name="color-scheme" content="dark light"> -->
   <title>Document</title>
+
 </head>
 
 <body>
@@ -17,13 +18,13 @@
         <div>
           <h2>devfinder</h2>
         </div>
-        <div type="submit" class="mode" onclick="mode();changeMode();">
+        <div id="darkbutton" type="submit" class="mode" onclick="mode();changeMode();">
           <p id="dark-light">DARK</p><img id="moon-sun" src="assets/icon-moon.svg" alt="moon-sun">
         </div>
       </div>
 
       <div class="main__search">
-        <input type="text" name="username" id="username"  placeholder="Search GitHub username..." onkeypress="return searchKeyPress(event);">
+        <input type="text" name="username" id="username" placeholder="Search GitHub username..." onkeypress="return searchKeyPress(event);">
         <p id="warr">No results</p>
         <button id="search" onclick="main();">Search</button>
       </div>
@@ -63,14 +64,14 @@
               <p id="following-data">--</p>
             </div>
           </div>
-          <div>
+          <div class="info-33">
             <div class="info-3">
-              <p id="location-data-all"><img src="assets/icon-location.svg" alt=""><span id="location-data">Not Available</span></p>
-              <p id="twitter-data-all"><img src="assets/icon-twitter.svg" alt=""><span id="twitter-data">Not Available</span></p>
+              <a id="location-data-all"><img src="assets/icon-location.svg" alt=""><span id="location-data">Not Available</span></a>
+              <a id="blog-data-all"><img src="assets/icon-website.svg" alt=""><span id="blog-data">Not Available</span></a>
             </div>
             <div class="info-3">
-              <p id="blog-data-all"><img src="assets/icon-website.svg" alt=""><a><span id="blog-data">Not Available</span></a></p>
-              <p id="company-data-all"><img src="assets/icon-company.svg" alt=""><span id="company-data">Not Available</span></p>
+              <a id="twitter-data-all"><img src="assets/icon-twitter.svg" alt=""><span id="twitter-data">Not Available</span></a>
+              <a id="company-data-all"><img src="assets/icon-company.svg" alt=""><span id="company-data">Not Available</span></a>
             </div>
           </div>
 

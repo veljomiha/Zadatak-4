@@ -4,21 +4,30 @@ window.addEventListener("load",(event)=>{
 
 function main() {
     let username = document.getElementById("username").value;
-    getData(username);
+    if(username){
+        getData(username);
+    }
 };
 
 const getData = (username) => {
     fetch('https://api.github.com/users/' + username)
         .then(response => response.json())
         .then(data => {
+
             if (data.hasOwnProperty("message")) {
-                // alert("User does not exist!")
-                document.getElementById("warr").style.display = "flex";
+                    document.getElementById("warr").style.display = "flex";
             }
 
             if (!data.hasOwnProperty("message")) {
+
                 document.getElementById("warr").style.display = "none";
-                document.getElementById("name-data").innerHTML = data.name;
+                if(data.name == null){
+                    document.getElementById("name-data").innerHTML = data.login;
+                }
+                else{
+                    document.getElementById("name-data").innerHTML = data.name;
+                }
+                
                 if (data.bio) {
                     document.getElementById("bio-data").style.opacity="1";
                     document.getElementById("bio-data").innerHTML = data.bio;
@@ -27,7 +36,7 @@ const getData = (username) => {
                     document.getElementById("bio-data").style.opacity="0.75";
                     document.getElementById("bio-data").innerHTML = "This profile has no bio";
                 }
-                document.getElementById("username-data").innerHTML = data.login;
+                    document.getElementById("username-data").innerHTML = data.login;
 
                 let d = new Date(data.created_at);
                 let datestring = d.getDate()  + " " + d.toLocaleString('en-us',{month:'short'})+ " " + d.getFullYear();
@@ -42,6 +51,7 @@ const getData = (username) => {
                 if (data.twitter_username) {
                     document.getElementById("twitter-data-all").style.opacity="1";
                     document.getElementById("twitter-data").innerHTML = data.twitter_username;
+                    document.getElementById("twitter-data-all").href = data.twitter_username;
                 }
                 else{
                     document.getElementById("twitter-data-all").style.opacity="0.5";
@@ -50,6 +60,7 @@ const getData = (username) => {
                 if (data.blog) {
                 document.getElementById("blog-data-all").style.opacity="1";
                 document.getElementById("blog-data").innerHTML = data.blog;
+                document.getElementById("blog-data-all").href = data.blog;
                 }
                 else{
                     document.getElementById("blog-data-all").style.opacity="0.5";
@@ -58,7 +69,9 @@ const getData = (username) => {
                 
                 if (data.company) {
                 document.getElementById("company-data-all").style.opacity="1";
-                document.getElementById("company-data").innerHTML = data.company;  
+                document.getElementById("company-data").innerHTML = data.company; 
+                document.getElementById("company-data-all").href = data.company;
+                
                 }
                 else{
                     document.getElementById("company-data-all").style.opacity="0.5";
